@@ -1,0 +1,23 @@
+{
+  "name": "pablonoya.github.io",
+  "version": "1.0.0",
+  "description": "Mi página web :p",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloNoya/PabloNoya.github.io.git"
+  },
+  "author": "PabloNoya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PabloNoya/PabloNoya.github.io/issues"
+  },
+  "homepage": "https://github.com/PabloNoya/PabloNoya.github.io#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1"
+  }
+}
