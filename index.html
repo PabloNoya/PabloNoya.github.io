@@ -1,76 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mi web</title>
-    <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
-</head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Mi página</a>
+    <meta name="description" content="PabloNoya GitHub.io">
+    <meta name="Keywords" content="PabloNoya, GitHub, io, blog">
+    <meta name="author" content="PabloNoya">
+    <meta name="robots" content="index,follow" />
+    <!-- OpenGraph metadata-->
+    <meta property="og:locale" content="es_LA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PabloNoya GitHub.io" />
+    <meta property="og:description" content="GitHub.io blog" />
+    <meta property="og:url" content="https://pablonoya.github.io" />
+    <meta property="og:site_name" content="pablonoya.github.io" />
+    <meta property="og:image" content="https://pablonoya.github.io/src/img/1.jpg" />   
+    <meta property='fb:admins' content='FB-AppID' />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="https://pablonoya.github.io" />
+    <meta name="twitter:creator" content="https://pablonoya.github.io" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129730740-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-129730740-1');
+    </script>
+
+    <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Mi Web</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <!-- <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="mapas.html">Mapa <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li> -->
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
-</body>
-<div class="container-fluid">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src=".../800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
 
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" class="form-control" id="titulo" placeholder="Ej. Mi título">
+                </div>
+
+                <div class="form-group">
+                    <label for="contenido">Contenido</label>
+                    <textarea id="contenido" class="form-control" rows="3" placeholder="Ej. Mi Contenido"></textarea>
+                </div>
+
+                <button onclick="saveData()" class="btn btn-primary btn-block">Enviar</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Editar post</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="edttitulo">Título</label>
+                                                <input type="text" class="form-control" id="edtTitulo" placeholder="Ej. Mi título">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="contenido">Contenido</label>
+                                                <textarea id="edtContenido" class="form-control" rows="3" placeholder="Ej. Mi Contenido"></textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="hidden" class="form-control" id="key">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="editData()" class="btn btn-primary btn-block" data-dismiss="modal">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <ul id="blog">
+
+                </ul>
+                <div id="loader">
+                    <img src="./src/img/Eclipse-1s-200px.gif" alt="Cargando">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
 <script src="./dist/js/jquery.min.js"></script>
 <script src="./dist/js/bootstrap.min.js"></script>
-</html>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDwhhh2J_PJIVcE5Asf1b_ZiAs2VXpgZ_k",
+        authDomain: "pablo-99128.firebaseapp.com",
+        databaseURL: "https://pablo-99128.firebaseio.com",
+        projectId: "pablo-99128",
+        storageBucket: "pablo-99128.appspot.com",
+        messagingSenderId: "710191517257"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="./dist/js/bootstrap-notify.js"></script>
+<script src="./dist/js/main.js"></script>
+
+</html
